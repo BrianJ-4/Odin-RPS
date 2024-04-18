@@ -8,6 +8,9 @@ const scissorsButton = document.getElementById("scissors");
 let playerScore = 0;
 let computerScore = 0;
 
+playerScoreSpan.textContent = "0";
+computerScoreSpan.textContent = "0";
+
 rockButton.addEventListener("click", () => {
     console.log("ROCK");
     playRound("rock", getComputerChoice())
@@ -77,7 +80,7 @@ function endGame(){
     scissorsButton.disabled = true
 
     const resetButton = document.createElement("button");
-    resetButton.textContent = "Reset";
+    resetButton.textContent = "Play Again";
     document.getElementById("resetSection").append(resetButton);
 
     resetButton.addEventListener("click", () => {
