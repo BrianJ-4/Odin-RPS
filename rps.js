@@ -5,6 +5,12 @@ const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 
+const playerImageHolder = document.getElementById("playerImage");
+const playerImage = document.createElement("img");
+
+const computerImageHolder = document.getElementById("computerImage");
+const computerImage = document.createElement("img");
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -37,8 +43,15 @@ function getComputerChoice(){
     return "scissors";
 }
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){            
     playerSelection = playerSelection.toLowerCase();
+    
+    playerImage.src = "images/" + playerSelection + ".png";
+    playerImageHolder.append(playerImage);
+    
+    computerImage.src = "images/" + computerSelection + ".png";
+    computerImageHolder.append(computerImage);
+
     if(playerSelection == computerSelection) {
         messageDisplay.textContent = "Tie!";
         return
@@ -97,5 +110,7 @@ function endGame(){
         messageDisplay.textContent = "";
         
         document.getElementById("resetSection").removeChild(resetButton);
+        playerImage.src = "";
+        computerImage.src= "";
     })
 }

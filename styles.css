@@ -29,7 +29,7 @@ h1{
     align-items: center;
     border: solid;
     border-color: #18baba;
-    width: 50%;
+    width: 100%;
     font-size: 30px;
     flex-wrap: wrap;
 }
@@ -62,7 +62,7 @@ h1{
     background: none;
 }
 
-#buttonContainer button img {
+img {
     width: 75%;
     height: auto;
     cursor: pointer;
@@ -99,4 +99,14 @@ h1{
     bottom: 10px;
     width: 100%;
     text-align: center;
+}
+
+#resultSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#computerImage img{
+    padding-left: 50px;
 }
